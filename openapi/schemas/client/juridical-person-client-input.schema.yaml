@@ -1,0 +1,20 @@
+title: JuridicalPersonClientInput
+type: object
+description: Represent a juridical person client entity
+properties:
+  documentNumber:
+    type: string
+    example: 45558779000155
+  tenantId:
+    type: string
+    format: uuid
+    example: 4c13575f-64a1-4fd4-b86b-19a6e354388c
+  name:
+    type: string
+    example: Mr Cauton
+  serviceId:
+    type: string
+    format: uuid
+    example: 4c13575f-64a1-4fd4-b86b-19a6e354388c
+  
+  

@@ -1,0 +1,29 @@
+title: Client
+type: object
+description: Represent a client entity
+properties:
+  id:
+    type: string
+    format: uuid
+    example: 4c13575f-64a1-4fd4-b86b-19a6e354388c
+  documentNumber:
+    type: string
+    example: 07806219560
+  tenantId:
+    type: string
+    format: uuid
+    example: 4c13575f-64a1-4fd4-b86b-19a6e354388c
+  name:
+    type: string
+    example: Mr Cauton
+  serviceId:
+    type: string
+    format: uuid
+    example: 4c13575f-64a1-4fd4-b86b-19a6e354388c
+  clientType:
+    type: string
+    example: NATURAL_PERSON
+    enum:
+      - NATURAL_PERSON
+      - JURIDICAL_PERSON
+  

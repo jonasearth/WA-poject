@@ -1,0 +1,44 @@
+root: true
+parserOptions:
+  project: 'package.json'
+  extraFileExtensions:
+    - .mjs
+extends:
+  - airbnb-typescript
+  - airbnb-typescript-prettier
+parser: '@typescript-eslint/parser'
+plugins:
+  - '@typescript-eslint'
+rules:
+  camelcase:
+  - error
+  '@typescript-eslint/ban-types': 0
+  'import/prefer-default-export': 0
+
+  import/no-extraneous-dependencies:
+  - error
+  - devDependencies:
+    - "**/*.test.ts"
+    - "**/*.spec.ts"
+    - "**/*.test.tsx"
+    - "**/*.spec.tsx"
+overrides:
+  - files:
+    - "**/*.entity.ts"
+    - "**/*.entity.tsx"
+    - "**/*.schema.ts"
+    - "**/*.schema.tsx"
+    - "**/*.type.ts"
+    - "**/*.type.tsx"
+    rules:
+      camelcase: 0
+      '@typescript-eslint/camelcase': 0
+      '@typescript-eslint/naming-convention':
+        - error
+        - selector: property
+          format:
+          - snake_case
+          - camelCase
+settings:
+  react:
+    version: latest

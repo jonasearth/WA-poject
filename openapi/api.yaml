@@ -1,0 +1,75 @@
+openapi: 3.0.3
+info:
+  title: Client core
+  description: |
+    # Client core API
+
+    **Description**: Api responsible for the client operations
+
+    ## Generic errors
+
+    Every request may return one of the following errors:
+
+    ### Unprocessable Entity
+
+    Returned when the request schema is not valid.
+
+    ```json
+    {
+      "statusCode": 422,
+      "message": [
+        {
+            "target": {
+                "email": "john.doe@email.com",
+                "token": "99999"
+            },
+            "value": "99999",
+            "property": "token",
+            "children": [],
+            "constraints": {
+                "isLength": "token must be longer than or equal to 6 characters"
+            }
+        }
+      ],
+      "error": "Unprocessable Entity"
+    }
+
+    ```
+
+    ### Unauthorized
+
+    Returned when the authentication/authorization fails
+
+    ```json
+    {
+      "statusCode": 401,
+      "message": "Access token missing or invalid",
+      "error": "Unprocessable Entity"
+    }
+
+    ```
+
+  version: 0.1.0
+tags:
+  - name: Client
+    description: Client basic operations
+servers:
+  - url: http://localhost:3002/
+    description: Local server
+components:
+  # Adding this only to show list of schemas at the bottom of the page.
+  # Reference schemas using their files, not this definition.
+  schemas:
+    NaturalPersonClientInput:
+      $ref: ./schemas/client/natural-person-client-input.schema.yaml
+    JuridicalPersonClientInput:
+      $ref: ./schemas/client/juridical-person-client-input.schema.yaml
+    Client:
+      $ref: ./schemas/client/client.schema.yaml
+
+paths:
+  /client/juridical-person:
+    $ref: './paths/client~1juridical-person/index.yaml'
+  /client/natural-person:
+    $ref: './paths/client~1natural-person/index.yaml'
+  

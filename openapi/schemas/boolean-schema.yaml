@@ -1,0 +1,10 @@
+title: BooleanSchema
+type: object
+description: Boolean endpoint response schemas
+properties:
+  value:
+    type: string
+    example: YES
+    enum:
+      - YES
+      - NO

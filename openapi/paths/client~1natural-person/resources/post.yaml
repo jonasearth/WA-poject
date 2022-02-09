@@ -1,0 +1,22 @@
+summary: Create a natural person client
+operationId: CreateNaturalPersonClient
+tags:
+  - Client
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../../schemas/client/natural-person-client-input.schema.yaml
+responses:
+  202:
+    description: Client created
+    content:
+      application/json:
+        schema:
+          $ref: ../../../schemas/client/client.schema.yaml
+  422:
+    description: Some of the body fields are incorrect
+    content:
+      application/json:
+        schema:
+          $ref: ../../../schemas/error/unprocessable-entity-error.schema.yaml

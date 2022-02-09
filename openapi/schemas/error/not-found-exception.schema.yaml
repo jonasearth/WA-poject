@@ -1,0 +1,16 @@
+title: ErrorSchema
+type: object
+description: Default error response schema
+properties:
+  statusCode:
+    type: number
+    example: 404
+    description: The http error code
+  error:
+    type: string
+    example: Not Found
+    description: The Http error message
+  message:
+    type: string
+    example: Could not find entity with id 1
+    description: Error specific message

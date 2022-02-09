@@ -1,0 +1,16 @@
+title: ForbiddenErrorSchema
+type: object
+description: Forbidden error schema
+properties:
+  statusCode:
+    type: number
+    example: 403
+    description: The HTTP error code
+  error:
+    type: string
+    example: Forbidden
+    description: The HTTP error message
+  message:
+    type: string
+    example: The user does not have access to this area
+    description: Error message

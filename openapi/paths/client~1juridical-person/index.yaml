@@ -1,0 +1,2 @@
+post:
+  $ref: './resources/post.yaml'

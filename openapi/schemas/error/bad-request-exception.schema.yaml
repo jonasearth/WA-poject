@@ -1,0 +1,16 @@
+title: BadRequestExceptionSchema
+type: object
+description: Bad request exception schema
+properties:
+  statusCode:
+    type: number
+    example: 400
+    description: The http error code
+  error:
+    type: string
+    example: Bad Request
+    description: The Http error message
+  message:
+    type: string
+    example: The juridical person already has a document of this type
+    description: Error specific message

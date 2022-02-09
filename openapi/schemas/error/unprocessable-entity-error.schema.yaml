@@ -1,0 +1,45 @@
+title: UnprocessableEntityErrorSchema
+type: object
+description: Unprocessable entity error response schema
+properties:
+  statusCode:
+    type: number
+    example: 422
+    description: The HTTP error code
+  message:
+    type: array
+    items:
+      type: object
+      properties:
+        target:
+          type: object
+          properties:
+            juridical_person_id:
+              type: string
+              format: uuid
+              example: 1a119b57-581b-4b98-9382-3db110bffdb
+              description: juridical person uuid
+        value:
+          type: string
+          format: uuid
+          example: 1a119b57-581b-4b98-9382-3db110bffdb
+          description: juridical person uuid
+        property:
+          type: string
+          example: juridical_person_id
+          description: field name
+        children:
+          type: array
+          items:
+            type: object
+        constraints:
+          type: object
+          properties:
+            isUuid:
+              type: string
+              example: juridical_person_id must be a UUID
+              description: error description
+  error:
+    type: string
+    example: Unprocessable Entity
+    description: The HTTP error message
