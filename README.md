@@ -43,6 +43,40 @@ To open html coverage run:
 ```bash
 firefox coverage/lcov-report/index.html
 ```
+## Knex cli commands
+
+We provide the following knex commands.
+
+```bash
+docker-compose run --rm node npm run ts-knex # for typescript
+
+docker-compose run --rm node npm run knex # for plain javascript
+```
+
+These commands accept the same options as knex commands, for example:
+
+```bash
+    docker-compose run --rm node npm run ts-knex -- --knexfile=my-knexfile.ts migrate:make -x ts migration-name # Create a migration in typescript
+
+    docker-compose run --rm node npm run ts-knex -- --knexfile=my-knexfile.ts seed:make -x ts seed-name # Create a seed in typescript
+
+    docker-compose run --rm node npm run ts-knex -- --knexfile=my-knexfile.ts migrate:latest # Run all migrations in typescript
+
+    docker-compose run --rm node npm run ts-knex -- --knexfile=my-knexfile.ts migrate:rollback # Rollback a single migration in typescript
+    # example: docker-compose run --rm node npm run ts-knex -- --knexfile=src/juridical-person/database/knexfile.ts migrate:rollback
+
+    docker-compose run --rm node npm run ts-knex -- --knexfile=my-knexfile.ts seed:run # Run all seeds in typescript
+    # To run a specific seed, add --specific=seed-file.ts to the end of the command
+
+    docker-compose run --rm node npm run knex -- --knexfile=my-knexfile.js migrate:latest # Run all migrations in javascript
+
+    docker-compose run --rm node npm run knex -- --knexfile=my-knexfile.js migrate:rollback # Rollback a single migration in javascript
+
+    docker-compose run --rm node npm run knex -- --knexfile=my-knexfile.js seed:run # Run all seeds in javascript
+```
+
+It is important to not mix typescript and javascript commands. Always use typescript for development to avoid corrupt directory errors and so you can seed an run migrations in your tests.
+
 
 ## Running eslint
 

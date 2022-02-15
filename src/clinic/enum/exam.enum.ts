@@ -1,0 +1,4 @@
+export enum ExamEnum {
+  CLINICAL_ANALYSIS = 'CLINICAL_ANALYSIS',
+  IMAGE = 'IMAGE',
+}

@@ -19,7 +19,7 @@
     "test": "jest",
     "test:watch": "node --inspect-brk=0.0.0.0 -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --watch --runInBand",
     "test:ci": "jest --ci --testResultsProcessor=\"jest-junit\" --coverage --coverageReporters=cobertura",
-    "test:cov": "jest --coverage",
+    "test:cov": "jest -i --coverage",
     "test:debug": "node --inspect-brk=0.0.0.0 -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "ts-knex": "ts-node -r dotenv/config -r tsconfig-paths/register node_modules/.bin/knex",
     "knex": "node -r dotenv/config node_modules/.bin/knex"
