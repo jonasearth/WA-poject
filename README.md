@@ -22,6 +22,11 @@ To start the project, install the dependencies and run
 ```bash
 docker-compose up
 ```
+After start the project need run migrations to create tables in database
+
+```bash
+docker-compose run --rm node npm run ts-knex -- --knexfile=my-knexfile.ts migrate:latest
+```
 
 ## Running tests
 
